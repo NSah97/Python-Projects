@@ -1,3 +1,5 @@
+# before using this program install packages pyttsx3 und PyPDF2 
+
 import os
 import PyPDF2
 import pyttsx3
@@ -23,12 +25,12 @@ def pdf_to_speech(pdf_path):
     text_to_speech(text, language='de')
 
 if __name__ == "__main__":
-    # Bestimme den Pfad des aktuellen Ordners (funktioniert nur, wenn py.script und PDf im gleichen Ordner gespeichert sind)
+    # Determine the path of the current folder (only works if py.script and PDF are stored in the same folder)
     current_folder = os.path.dirname(os.path.abspath(__file__))
 
     pdf_file = os.path.join(current_folder, "insert/any/pdf/file.pdf")
 
     pdf_to_speech(pdf_file)
 
-    # Öffne die generierte MP3-Datei mit dem Standard-Audioplayer
+    # Open the generated MP3 file with the default audio player
     os.system('start output.mp3')
